@@ -1,0 +1,23 @@
+.root {
+    flex-grow: 1px;
+}
+.flex {
+    flex: 1px;
+}
+.body {
+    margin-left: 20px;
+}
+.nav-left {
+    flex: 1px;
+    width: 10px;
+}
+.nav-right {
+    flex: 1px;
+    width: 10px;
+    margin-left: auto;
+}
+.menuButton {
+    margin-left: -12px;
+    margin-right: 20px;
+}
+
