@@ -33,7 +33,7 @@ class Form extends Component {
         const { name } = this.state;
         return (
             <form onSubmit={this.handleSubmit}>
-            <br />
+            <h1>Add entry</h1>
             <div className="form-group">
                 <label htmlFor="name">New item: </label>
                 <input
@@ -45,7 +45,7 @@ class Form extends Component {
                 />
             </div>
             <br />
-            <Button variant="raised" color="primary">
+            <Button onClick={(event) => this.handleSubmit(event)} variant="raised" color="primary">
                 Add
             </Button>
             </form>

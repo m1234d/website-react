@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import store from '../redux/store';
 
 
 
 export default class Home extends Component {
     constructor() {
         super();
+        window.store = store;
+        
     }
 
     render() {

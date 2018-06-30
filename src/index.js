@@ -13,6 +13,8 @@ import Login from './login/login';
 import Home from './home/home';
 import store from "./redux/store/index";
 import {Provider} from "react-redux";
+import { connect } from "react-redux";
+
 
 class RouteLink extends React.Component {
   state = {
@@ -43,14 +45,19 @@ class RouteLink extends React.Component {
   }
 }
 
-class Navbar extends React.Component {
+const mapStateToProps = state => {
+  return {
+    logged_in: state.logged_in
+  }
+}
+
+class ConnectedNavbar extends React.Component {
 
   state = {
-    logged_in: false,
     redirectHome: true
   }
   getLoginButton() {
-    if(!this.state.logged_in) {
+    if(!this.props.logged_in) {
       return <RouteLink to="/login" color="inherit" className="login">Login</RouteLink>
     }
   }
@@ -83,6 +90,7 @@ class Navbar extends React.Component {
   );
   }
 }
+const Navbar = connect(mapStateToProps)(ConnectedNavbar);
 class Body extends React.Component {
 
   render() {
